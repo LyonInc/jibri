@@ -38,9 +38,9 @@ import java.util.logging.Logger
  * Parameters which will be passed to ffmpeg
  */
 data class FfmpegExecutorParams(
-    val resolution: String = "1280x720",
+    val resolution: String = "854x480",
     val framerate: Int = 30,
-    val videoEncodePreset: String = "veryfast",
+    val videoEncodePreset: String = "fast",
     val queueSize: Int = 4096,
     val streamingMaxBitrate: Int = 2976,
     val streamingBufSize: Int = streamingMaxBitrate * 2,
@@ -51,7 +51,7 @@ data class FfmpegExecutorParams(
         // it should look the same or nearly the same as the input but it
         // isn't technically lossless.
         // https://trac.ffmpeg.org/wiki/Encode/H.264#crf
-    val h264ConstantRateFactor: Int = 25,
+    val h264ConstantRateFactor: Int = 26,
     val gopSize: Int = framerate * 2
 )
 
