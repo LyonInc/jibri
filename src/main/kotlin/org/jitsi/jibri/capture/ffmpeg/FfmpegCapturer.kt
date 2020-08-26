@@ -42,7 +42,7 @@ data class FfmpegExecutorParams(
     val framerate: Int = 30,
     val videoEncodePreset: String = "faster",
     val queueSize: Int = 4096,
-    val streamingMaxBitrate: Int = 2976,
+    val streamingMaxBitrate: Int = 2000,
     val streamingBufSize: Int = streamingMaxBitrate * 2,
         // The range of the CRF scale is 0–51, where 0 is lossless,
         // 23 is the default, and 51 is worst quality possible. A lower value
@@ -51,7 +51,7 @@ data class FfmpegExecutorParams(
         // it should look the same or nearly the same as the input but it
         // isn't technically lossless.
         // https://trac.ffmpeg.org/wiki/Encode/H.264#crf
-    val h264ConstantRateFactor: Int = 25,
+    val h264ConstantRateFactor: Int = 30,
     val gopSize: Int = framerate * 2
 )
 
